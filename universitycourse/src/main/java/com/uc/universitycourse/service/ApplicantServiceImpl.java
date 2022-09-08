@@ -21,7 +21,10 @@ public class ApplicantServiceImpl implements ApplicantService {
 	@Override
 	public Applicant addApplicant(Applicant applicant) {
 		log.info("enter ApplicantServiceImpl :: addAplicant()");
-		
+		if(applicantRepo.existsApplicantBycontactNumber(applicant.getContactNumber())) {
+			throw new ApplicantNotFoundException("applicant already exist");
+			
+		}
 		return applicantRepo.save(applicant);
 	}
 

@@ -1,7 +1,5 @@
 package com.uc.universitycourse.dto;
 
-import java.time.LocalDate;
-
 
 import javax.validation.constraints.NotNull;
 
@@ -12,8 +10,6 @@ public class AdmissionDto {
 	private int admissionId;
 	private int applicantId;
 	private int courseId;
-    @NotNull(message = "Enter admission date")
-    private LocalDate admissionDate;
     @NotNull(message = "Enter Status")
     private AdmissionStatus status;
 	
@@ -34,12 +30,6 @@ public class AdmissionDto {
 	}
 	public void setCourseId(int courseId) {
 		this.courseId = courseId;
-	}
-	public LocalDate getAdmissionDate() {
-		return admissionDate;
-	}
-	public void setAdmissionDate(LocalDate admissionDate) {
-		this.admissionDate = admissionDate;
 	}
 	public AdmissionStatus getStatus() {
 		return status;

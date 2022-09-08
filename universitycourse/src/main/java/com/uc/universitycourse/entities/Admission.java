@@ -1,6 +1,6 @@
 package com.uc.universitycourse.entities;
 
-import java.time.LocalDate;
+
 
 
 import javax.persistence.Entity;
@@ -18,8 +18,6 @@ public class Admission {
 	private int admissionId;
 	private int applicantId;
 	private int courseId;
-    @NotNull(message = "Enter admission date")
-    private LocalDate admissionDate;
     @NotNull(message = "Enter Status")
     private AdmissionStatus status;
 	
@@ -48,13 +46,6 @@ public class Admission {
 		this.courseId = courseId;
 	}
 
-	public LocalDate getAdmissionDate() {
-		return admissionDate;
-	}
-
-	public void setAdmissionDate(LocalDate admissionDate) {
-		this.admissionDate = admissionDate;
-	}
 
 	public AdmissionStatus getStatus() {
 		return status;

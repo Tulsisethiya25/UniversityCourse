@@ -31,6 +31,7 @@ public class ApplicantController {
 		applicant.setStudentDegree(applicantdto.getStudentDegree());
 		applicant.setStudentGraduationPercent(applicantdto.getStudentGraduationPercent());
 		applicant.setStudentname(applicantdto.getStudentname());
+		applicant.setPassword(applicantdto.getPassword());
 		 return applicantService.addApplicant(applicant);
 		    
        

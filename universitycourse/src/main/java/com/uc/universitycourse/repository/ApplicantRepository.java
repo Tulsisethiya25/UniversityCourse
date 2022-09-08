@@ -12,5 +12,6 @@ public interface ApplicantRepository extends CrudRepository<Applicant, Integer> 
     void deleteByApplicantId(int applicantId);
     public boolean existsApplicantByApplicantId(int applicantId);
 	public boolean existsApplicantBypassword(String pwd);
+	public boolean existsApplicantBycontactNumber(String contactNumber);
 
 }

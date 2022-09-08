@@ -8,10 +8,17 @@ public class ApplicantDto {
     private String contactNumber;
     private String studentDegree;
     private int studentGraduationPercent;
+
     private Admission admission;
 
 
-
+    public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	private String password;
 	public int getApplicantId() {
 		return applicantId;
 	}

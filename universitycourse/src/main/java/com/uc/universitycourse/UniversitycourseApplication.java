@@ -1,4 +1,4 @@
-package com.uc.universitycourse;
+ package com.uc.universitycourse;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

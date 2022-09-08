@@ -62,12 +62,6 @@ public class AdmissionServicelmpl implements AdmissionService {
 			return admission;
 		
 	}
-	public List<Admission> showAllAdmissionByDate(LocalDate admissionDate) 
-	{
-		 return admissionRepository.findAllByAdmissionDate(admissionDate);
-	
-		
-	}
 	public AdmissionServicelmpl(AdmissionRepository admissionRepository) {
 		super();
 		this.admissionRepository = admissionRepository;

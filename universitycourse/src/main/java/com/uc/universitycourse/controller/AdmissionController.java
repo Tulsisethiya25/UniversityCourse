@@ -32,9 +32,9 @@ public class AdmissionController {
     {
 		Admission admission=new Admission();
 		admission.setApplicantId(admissiondto.getApplicantId());
-		admission.setAdmissionDate(admissiondto.getAdmissionDate());
 		admission.setCourseId(admissiondto.getCourseId());
 		admission.setStatus(admissiondto.getStatus());
+		
 		Admission applicantaddinfo = admissionService.save(admission);
 		    
         return new ResponseEntity<>(applicantaddinfo ,HttpStatus.CREATED);
@@ -68,12 +68,5 @@ public class AdmissionController {
        
     }
 
-    @GetMapping("/showAllAdmissionByAdmissionDate/{admissionDate}")
-    public List<Admission> findAllByCourseId(@PathVariable LocalDate admissionDate) 
-      {
-    		
-	    return admissionService.showAllAdmissionByDate(admissionDate);
-		   
-        }
-
+    
 }

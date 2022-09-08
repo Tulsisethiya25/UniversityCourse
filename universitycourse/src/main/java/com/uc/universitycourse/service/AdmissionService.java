@@ -1,7 +1,7 @@
 package com.uc.universitycourse.service;
 
 
-import java.time.LocalDate;
+
 
 
 import java.util.List;
@@ -15,6 +15,5 @@ public interface AdmissionService {
 	public Admission deleteById(int admissionId) throws AdmissionNotFoundException;
 	public Admission updateApplicantCourse(int applicantId,int courseId) throws AdmissionNotFoundException;
 	public List<Admission> showAllAdmissionByCourseId(int courseId);
-	public List<Admission> showAllAdmissionByDate(LocalDate courseId);
 	
 }
