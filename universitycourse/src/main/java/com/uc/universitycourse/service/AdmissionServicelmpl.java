@@ -38,26 +38,26 @@ public class AdmissionServicelmpl implements AdmissionService {
 			throw new AdmissionNotFoundException("please enter valid admissionId");
 		}	
 	}
-	@Override
-	public Admission updateApplicantCourse(int applicantId,int courseId) throws AdmissionNotFoundException {
-		 Admission admission = admissionRepository.findByApplicantId(applicantId);
-		 if(admission!=null)
-		 {
-		 admission.setCourseId(courseId);
-		 admissionRepository.save(admission);
-		return admission;
-		 }
-		 else
-		 {
-			 log.error("ApplicantId is not Correct");
-			 throw new AdmissionNotFoundException("please enter valid ApplicantId");
-	}
-	}
+//	@Override
+//	public Admission updateApplicantCourse(int applicantId,int courseId) throws AdmissionNotFoundException {
+//		 Admission admission = admissionRepository.findByApplicantId(applicantId);
+//		 if(admission!=null)
+//		 {
+//		 admission.setCourseId(courseId);
+//		 admissionRepository.save(admission);
+//		return admission;
+//		 }
+//		 else
+//		 {
+//			 log.error("ApplicantId is not Correct");
+//			 throw new AdmissionNotFoundException("please enter valid ApplicantId");
+//	}
+//	}
 	@Override
 	
-	public List<Admission> showAllAdmissionByCourseId(int courseId) 
+	public List<Admission> showAllAdmissionByCourse(String course) 
 	{
-		 List<Admission> admission = admissionRepository.findAllByCourseId(courseId);
+		 List<Admission> admission = admissionRepository.findAllByCourse(course);
 		 log.info("this is ouput of showAll Admission By CourseId");
 			return admission;
 		

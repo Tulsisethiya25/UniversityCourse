@@ -3,29 +3,39 @@ package com.uc.universitycourse.dto;
 
 
 public class UniversityStaffMemberDTO {
-	private int staffid;
-	private String password;
-	private String role;
+	private int Staffid;
+	private String Password;
+	private String Role;
 	
+	public UniversityStaffMemberDTO() {
+		
+	}
+	
+	public UniversityStaffMemberDTO(int staffid, String password, String role) {
+		super();
+		Staffid = staffid;
+		Password = password;
+		Role = role;
+	}
 	public int getStaffid() {
-		return staffid;
+		return Staffid;
 	}
 	public void setStaffid(int staffid) {
-		this.staffid = staffid;
+		Staffid = staffid;
 	}
 	public String getPassword() {
-		return password;
+		return Password;
 	}
 	public void setPassword(String password) {
-		this.password = password;
+		Password = password;
 	}
 	public String getRole() {
-		return role;
+		return Role;
 	}
 	public void setRole(String role) {
-		this.role = role;
+		Role = role;
 	}
 	
-		
+	
 
 }

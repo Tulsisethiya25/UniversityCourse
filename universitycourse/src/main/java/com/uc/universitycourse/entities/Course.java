@@ -2,6 +2,7 @@ package com.uc.universitycourse.entities;
 
 
 import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -18,8 +19,8 @@ public class Course {
 	private String courseDuration;
 	private String courseFees;
 
-	@ManyToOne(cascade = {CascadeType.ALL})
-	private UniversityStaffMember ustaff;
+//	@ManyToOne(cascade = {CascadeType.ALL})
+//	private UniversityStaffMember ustaff;
 	
 	public int getCourseId() {
 		return courseId;

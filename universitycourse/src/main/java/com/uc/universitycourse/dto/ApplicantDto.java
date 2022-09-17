@@ -1,6 +1,10 @@
 package com.uc.universitycourse.dto;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+
 import com.uc.universitycourse.entities.Admission;
+import com.uc.universitycourse.entities.AdmissionStatus;
 
 public class ApplicantDto {
 	private int applicantId;
@@ -8,8 +12,32 @@ public class ApplicantDto {
     private String contactNumber;
     private String studentDegree;
     private int studentGraduationPercent;
-
+//	private int CourseId;
+    private AdmissionStatus status;
     private Admission admission;
+//    @GeneratedValue(strategy=GenerationType.IDENTITY)
+//    private int admissionId;
+
+//    public int getCourseId() {
+//		return CourseId;
+//	}
+//	public void setCourseId(int courseId) {
+//		CourseId = courseId;
+//	}
+	public AdmissionStatus getStatus() {
+		return status;
+	}
+	public void setStatus(AdmissionStatus status) {
+		this.status = status;
+	}
+//	public int getAdmissionId() {
+//		return admissionId;
+//	}
+//	public void setAdmissionId(int admissionId) {
+//		this.admissionId = admissionId;
+//	}
+
+//    private Admission admission;
 
 
     public String getPassword() {

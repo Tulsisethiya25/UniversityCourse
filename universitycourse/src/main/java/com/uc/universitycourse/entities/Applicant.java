@@ -19,6 +19,11 @@ public class Applicant {
     private String studentDegree;
     private int studentGraduationPercent;
     private String password;
+//    private int CourseId;
+    private AdmissionStatus status;
+
+//    @GeneratedValue(strategy=GenerationType.IDENTITY)
+//    private int admissionId;
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="admissionId")
     private Admission admission;
@@ -30,9 +35,28 @@ public class Applicant {
 	public void setAdmission(Admission admission) {
 		this.admission = admission;
 	}
+    
 	public int getApplicantId() {
 		return applicantId;
 	}
+//	public int getCourseId() {
+//		return CourseId;
+//	}
+//	public void setCourseId(int courseId) {
+//		CourseId = courseId;
+//	}
+	public AdmissionStatus getStatus() {
+		return status;
+	}
+	public void setStatus(AdmissionStatus status) {
+		this.status = status;
+	}
+//	public int getAdmissionId() {
+//		return admissionId;
+//	}
+//	public void setAdmissionId(int admissionId) {
+//		this.admissionId = admissionId;
+//	}
 	public void setApplicantId(int applicantId) {
 		this.applicantId = applicantId;
 	}

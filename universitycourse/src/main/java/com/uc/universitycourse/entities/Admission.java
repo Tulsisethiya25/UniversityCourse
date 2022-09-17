@@ -3,6 +3,8 @@ package com.uc.universitycourse.entities;
 
 
 
+
+
 import javax.persistence.Entity;
 
 import javax.persistence.GeneratedValue;
@@ -16,10 +18,10 @@ public class Admission {
 	@Id // annotation specifies the primary key of an entity
     @GeneratedValue(strategy = GenerationType.AUTO) // annotation provides for the specification of generation strategies for the values of primary keys
 	private int admissionId;
-	private int applicantId;
-	private int courseId;
-    @NotNull(message = "Enter Status")
-    private AdmissionStatus status;
+//	private int applicantId;
+	private String course;
+//    @NotNull(message = "Enter Status")
+//    private AdmissionStatus status;
 	
 
 	public int getAdmissionId() {
@@ -30,29 +32,29 @@ public class Admission {
 		this.admissionId = admissionId;
 	}
 
-	public int getApplicantId() {
-		return applicantId;
+//	public int getApplicantId() {
+//		return applicantId;
+//	}
+//
+//	public void setApplicantId(int applicantId) {
+//		this.applicantId = applicantId;
+//	}
+
+	public String getCourse() {
+		return course;
 	}
 
-	public void setApplicantId(int applicantId) {
-		this.applicantId = applicantId;
-	}
-
-	public int getCourseId() {
-		return courseId;
-	}
-
-	public void setCourseId(int courseId) {
-		this.courseId = courseId;
+	public void setCourse(String course) {
+		this.course = course;
 	}
 
 
-	public AdmissionStatus getStatus() {
-		return status;
-	}
-
-	public void setStatus(AdmissionStatus status) {
-		this.status = status;
-	}
+//	public AdmissionStatus getStatus() {
+//		return status;
+//	}
+//
+//	public void setStatus(AdmissionStatus status) {
+//		this.status = status;
+//	}
    
 	}

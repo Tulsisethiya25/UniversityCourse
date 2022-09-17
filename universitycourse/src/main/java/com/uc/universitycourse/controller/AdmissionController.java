@@ -1,6 +1,6 @@
 package com.uc.universitycourse.controller;
 
-import java.time.LocalDate;
+
 import java.util.List;
 import javax.validation.Valid;
 
@@ -31,9 +31,9 @@ public class AdmissionController {
     public ResponseEntity<Admission> addApplicantAdmission(@Valid @RequestBody AdmissionDto admissiondto) 
     {
 		Admission admission=new Admission();
-		admission.setApplicantId(admissiondto.getApplicantId());
-		admission.setCourseId(admissiondto.getCourseId());
-		admission.setStatus(admissiondto.getStatus());
+//		admission.setApplicantId(admissiondto.getApplicantId());
+		admission.setCourse(admissiondto.getCourse());
+//		admission.setStatus(admissiondto.getStatus());
 		
 		Admission applicantaddinfo = admissionService.save(admission);
 		    
@@ -49,21 +49,21 @@ public class AdmissionController {
        
     }
 
-	@PutMapping("/UpdateApplicantAdmission/{applicantId}/{courseId}")// Annotation for mapping HTTP PUT  requests onto specific handler methods.
-    public ResponseEntity<Admission> updateApplicantAdmission(@PathVariable int applicantId ,@PathVariable int courseId )throws AdmissionNotFoundException
-    {
-		Admission applicant = admissionService.updateApplicantCourse(applicantId,courseId);
-		   
-        return new ResponseEntity<>(applicant,HttpStatus.ACCEPTED);
-       
-    }
+//	@PutMapping("/UpdateApplicantAdmission/{applicantId}/{courseId}")// Annotation for mapping HTTP PUT  requests onto specific handler methods.
+//    public ResponseEntity<Admission> updateApplicantAdmission(@PathVariable int applicantId ,@PathVariable int courseId )throws AdmissionNotFoundException
+//    {
+//		Admission applicant = admissionService.updateApplicantCourse(applicantId,courseId);
+//		   
+//        return new ResponseEntity<>(applicant,HttpStatus.ACCEPTED);
+//       
+//    }
 
 	
-    @GetMapping("/showAllAdmissionByCourseId/{courseId}")// Annotation for mapping HTTP GET requests onto specific handler methods.
-    public List<Admission> findAllByCourseId(@PathVariable int courseId) 
+    @GetMapping("/showAllAdmissionByCourse/{course}")// Annotation for mapping HTTP GET requests onto specific handler methods.
+    public List<Admission> findAllByCourseId(@PathVariable String course) 
     {
     		
-	    return admissionService.showAllAdmissionByCourseId(courseId);
+	    return admissionService.showAllAdmissionByCourse(course);
 		   
        
     }

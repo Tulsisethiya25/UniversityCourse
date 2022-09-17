@@ -11,5 +11,4 @@ import com.uc.universitycourse.entities.LoginDetails;
 public interface ILoginRepository extends JpaRepository<LoginDetails,Integer>{
 	public Boolean existsLoginDetailsByLoginId(int loginId);
 	
-
 }

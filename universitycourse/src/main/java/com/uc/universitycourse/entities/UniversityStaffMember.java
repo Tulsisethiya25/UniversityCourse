@@ -1,48 +1,69 @@
 package com.uc.universitycourse.entities;
 
+
+
+
 import javax.persistence.Entity;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.transaction.Transactional;
 import javax.validation.constraints.NotNull;
 
 
-
-
-@Transactional
 @Entity
-@Table(name="UStaffs")
+@Table(name="ustaffs")
 public class UniversityStaffMember {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int staffid;
+	private int Staffid;
 	@NotNull
-	private String password;
+	private String Password;
 	@NotNull
-	private String role;
-	
-	public int getStaffid() {
-		return staffid;
-	}
-	public void setStaffid(int staffid) {
-		this.staffid = staffid;
-	}
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		this.password = password;
-	}
-	public String getRole() {
-		return role;
-	}
-	public void setRole(String role) {
-		this.role = role;
-	}
+	private String Role;
 	
 
+	
+	public UniversityStaffMember() {
+		
 	}
+
+	public UniversityStaffMember(int staffid, String password, String role) {
+		super();
+		Staffid = staffid;
+		Password = password;
+		Role = role;
+	}
+
+	public int getStaffid() {
+		return Staffid;
+	}
+
+	public void setStaffid(int staffid) {
+		Staffid = staffid;
+	}
+
+	public String getPassword() {
+		return Password;
+	}
+
+	public void setPassword(String password) {
+		Password = password;
+	}
+
+	public String getRole() {
+		return Role;
+	}
+
+	public void setRole(String role) {
+		Role = role;
+	}
+
+	
+	
+
+	
+
+}

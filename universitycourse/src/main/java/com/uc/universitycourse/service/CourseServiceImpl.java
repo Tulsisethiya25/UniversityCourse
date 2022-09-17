@@ -22,6 +22,9 @@ public class CourseServiceImpl implements ICourseService {
 	public Course save(Course course) {
 		
 		log.info("Course added successfully");
+		
+		
+		
 		return icourseRepository.save(course);
 	}
 
@@ -43,12 +46,10 @@ public class CourseServiceImpl implements ICourseService {
 	
 	
 	@Override
-	public Course updateCourses(String courseName,int courseId) {
-		Course course = icourseRepository.findByCourseId(courseId);
+	public Course updateCourses(int courseId,Course course) {
+		course = icourseRepository.findByCourseId(courseId);
 		if(course!=null)
-		 {
-		course.setCourseName(courseName);
-		
+		 {	
 		icourseRepository.save(course);
 		return course;
 		 }   else
@@ -82,6 +83,11 @@ public class CourseServiceImpl implements ICourseService {
 		}
 		throw new NoDataFoundException("No Courses available");
 	
+	}
+
+	@Override
+	public Course findByCourseId(int courseId) {
+		return icourseRepository.findByCourseId(courseId);
 	}
     
 	

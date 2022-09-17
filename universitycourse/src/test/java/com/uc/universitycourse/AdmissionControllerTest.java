@@ -35,24 +35,24 @@ class AdmissionControllerTest {
 		this.admissionService=new AdmissionServicelmpl(this.admissionRepo);
 		Admission admission=new Admission();
 		admission.setAdmissionId(0);
-		admission.setApplicantId(1);
-		admission.setCourseId(123);
+//		admission.setApplicantId(1);
+		admission.setCourse("Java");
 	    admissionService.save(admission);
 	}
 	@Test
 	void testAddApplicantAdmission() {
 		Admission admission=new Admission();
 		admission.setAdmissionId(0);
-		admission.setApplicantId(1);
-		admission.setCourseId(123);
+//		admission.setApplicantId(1);
+		admission.setCourse("Java");
 	    admissionService.save(admission);
 		verify(admissionRepo).save(admission);
 	}
 	
 	@Test
 	void testShowAllAdmissionByCourseId() {
-		admissionService.showAllAdmissionByCourseId(123);
-	    	verify(admissionRepo).findAllByCourseId(123);
+		admissionService.showAllAdmissionByCourse("123");
+	    	verify(admissionRepo).findAllByCourse("123");
 	}
 	
 	

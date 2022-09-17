@@ -13,6 +13,7 @@ public interface ICourseRepository extends CrudRepository<Course,Integer>  {
 	List<Course> findAllByCourseId(int courseId);
 	Course findByCourseId (int courseId);
 	List<Course> findAll();
+	
 
 	
 	

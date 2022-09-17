@@ -7,7 +7,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.uc.universitycourse.entities.AdmissionCommiteeMember;
 import com.uc.universitycourse.repository.AdmissionCommiteeMemberRepository;
 
@@ -27,7 +26,7 @@ public class AdmissionCommiteeMemberServiceImpl implements AdmissionCommiteeMemb
 
 	@Override
 	public AdmissionCommiteeMember updateCommiteeMember( AdmissionCommiteeMember member) {
-		AdmissionCommiteeMember adminMem=adminrepo.findAdmissionComitteeMemberByadminId(member.getAdminId());
+		AdmissionCommiteeMember adminMem=adminrepo.findAdmissionComitteeMemberByadminName(member.getAdminName());
 		adminMem.setAdminName(member.getAdminName());
 		adminMem.setAdminContact(member.getAdminContact());
 		log.info("updated CommiteeMember");
@@ -35,9 +34,9 @@ public class AdmissionCommiteeMemberServiceImpl implements AdmissionCommiteeMemb
 	}
 
 	@Override
-	public AdmissionCommiteeMember viewCommiteeMember(int adminId) {
+	public AdmissionCommiteeMember viewCommiteeMember(String adminName) {
 		log.info("this is ouput of viewCommiteeMember");
-		return adminrepo.findAdmissionComitteeMemberByadminId(adminId);
+		return adminrepo.findAdmissionComitteeMemberByadminName(adminName);
 	}
 
 	@Override
